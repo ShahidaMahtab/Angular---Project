@@ -1,0 +1,103 @@
+@import "_mixin";
+.review {
+  background: #f8f8f8;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  @include breakpoint-max(767px) {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  &-container {
+    &_slide {
+      &--details {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        margin-right: 40px;
+        margin-left: 40px;
+        @include breakpoint-max(1199px) {
+          margin-right: 50px;
+          margin-left: 50px;
+        }
+
+        @include breakpoint-max(767px) {
+          align-items: center;
+          flex-direction: column;
+          margin-right: 40px;
+          margin-left: 40px;
+        }
+
+        &__icon {
+          display: inline-block;
+          font-size: 8rem;
+          padding: 24px;
+          color: #95e1d4;
+          border: 3px solid #95e1d4;
+          margin-right: 45px;
+          @include breakpoint-max(1199px) {
+            margin-right: 25px;
+          }
+          @include breakpoint-max(767px) {
+            margin-right: 0;
+            margin-bottom: 20px;
+          }
+        }
+        .texts {
+          display: flex;
+          justify-content: space-around;
+          align-items: flex-start;
+          flex-direction: column;
+          &-top {
+            max-width: 800px;
+            color: #706f6f;
+            font-size: 22px;
+            font-style: italic;
+            text-align: left;
+            font-weight: 300;
+            @include breakpoint-max(1199px) {
+              max-width: 700px;
+            }
+            @include breakpoint-max(991px) {
+              max-width: 600px;
+            }
+            @include breakpoint-max(767px) {
+              font-size: 15px;
+              max-width: 400px;
+              text-align: center;
+            }
+            @include breakpoint-max(575px) {
+              max-width: 300px;
+            }
+            @include breakpoint-max(320px) {
+              max-width: 300px;
+            }
+          }
+          &-bottom {
+            display: flex;
+            align-items: center;
+            @include breakpoint-max(767px) {
+              text-align: center;
+              margin-left: auto;
+              margin-right: auto;
+            }
+            &_name {
+              font-size: 24px;
+              font-family: "Kaushan Script", cursive;
+              color: #282828;
+              display: flex;
+              align-items: center;
+              &::before {
+                content: "";
+                display: block;
+                width: 60px;
+                height: 3px;
+                background: red;
+                margin-right: 5px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

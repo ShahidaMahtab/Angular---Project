@@ -1,0 +1,98 @@
+<section class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <!-- first col-->
+      <div class="footer-inner_left">
+        <h1 class="footer-inner_left--title">MoGo</h1>
+        <p class="footer-inner_left--desc">
+          Mogo is a leading innovator, dedicated to providing cutting-edge
+          solutions in industry. With a focus on excellence and customer
+          satisfaction, we strive to exceed expectations and drive positive
+          change.
+        </p>
+        <div class="footer-inner_left--follower">
+          <p>15K<span>followers</span></p>
+          <hr />
+        </div>
+
+        <div class="footer-inner_left--icons">
+          <p>follow us :</p>
+          <a href="https://www.facebook.com/" target="_blank"
+            ><span nz-icon nzType="facebook" nzTheme="outline"></span
+          ></a>
+          <a href="https://twitter.com/" target="_blank"
+            ><span nz-icon nzType="twitter" nzTheme="outline"></span
+          ></a>
+          <a href="https://www.instagram.com/" target="_blank"
+            ><span nz-icon nzType="instagram" nzTheme="fill"></span
+          ></a>
+          <a href="https://www.youtube.com/" target="_blank"
+            ><span nz-icon nzType="youtube" nzTheme="fill"></span
+          ></a>
+          <a href="https://www.linkedin.com/" target="_blank"
+            ><span nz-icon nzType="linkedin" nzTheme="fill"></span
+          ></a>
+          <a href="https://www.google.com/" target="_blank"
+            ><span nz-icon nzType="google-plus" nzTheme="outline"></span
+          ></a>
+          <a href="https://dribbble.com/" target="_blank"
+            ><span nz-icon nzType="dribbble" nzTheme="outline"></span
+          ></a>
+        </div>
+        <div class="footer-inner_left--subscribe">
+          <input type="email" name="" id="" placeholder="Your Email" />
+          <button type="submit">Subscribe</button>
+        </div>
+      </div>
+      <!-- end of first col -->
+      <!-- second col -->
+      <div class="footer-inner_middle">
+        <h3 class="footer-inner_middle--title">Blogs</h3>
+        <div class="footer-inner_middle--box" *ngFor="let blog of blogs">
+          <div class="footer-inner_middle--box__image">
+            <img [src]="blog.image" alt="img" />
+          </div>
+          <div class="footer-inner_middle--box__text">
+            <h4>
+              <a [routerLink]="['blogs', blog.id]">{{ blog.title }}</a>
+            </h4>
+            <p>
+              {{ blog.date }},
+              <span>
+                {{ blog.year }}
+              </span>
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- end of second col -->
+      <!-- thrid col -->
+      <div class="footer-inner_right">
+        <h3 class="footer-inner_right--title">Instagram</h3>
+        <div class="footer-inner_right--box">
+          <div
+            class="footer-inner_right--box__image"
+            *ngFor="let image of images"
+          >
+            <img
+              nz-image
+              width="200px"
+              height="200px"
+              [alt]="image.alt"
+              [nzSrc]="image.src"
+            />
+            <div class="footer-inner_right--icon">
+              <span nz-icon nzType="eye" nzTheme="outline"></span>
+            </div>
+          </div>
+        </div>
+        <p class="footer-inner_right--text">view more photos</p>
+      </div>
+      <!-- end of thrid col -->
+    </div>
+    <div class="footer-bottom">
+      <hr />
+      <p>&copy;2024 MoGo free PSD template by <span>Laaqiq</span></p>
+    </div>
+  </div>
+</section>

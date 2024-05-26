@@ -1,0 +1,50 @@
+@import "_mixin";
+.map {
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+  @include breakpoint-max(767px) {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  text-align: center;
+
+  background: linear-gradient(rgba(190, 69, 70, 0.4), rgba(190, 69, 70, 0.4)),
+    url("../../../assets/images/clients/design-bg.jpg") no-repeat fixed
+      center/cover;
+  &-inner {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    button {
+      text-transform: uppercase;
+      // color: #be4546;
+      color: #fff;
+      font-size: 2rem;
+      font-weight: 500;
+      padding: 4px 10px;
+      transition: all 0.4s;
+      &:hover {
+        color: white;
+        background: #be4546;
+        border-radius: 5px;
+      }
+    }
+    span {
+      display: inline-block;
+      font-size: 3rem;
+      //color: #be4546;
+      color: #fff;
+      margin-bottom: 5px;
+    }
+    &_underline {
+      background: #be4546;
+      height: 3px;
+
+      width: 60px;
+      margin: 5px 0;
+    }
+  }
+}

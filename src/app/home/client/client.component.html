@@ -1,0 +1,33 @@
+<section class="client">
+  <div class="container">
+    <div class="client-inner">
+      <div class="client-inner_title">
+        <h4>Happy Clients</h4>
+        <h2>What People Say <span></span></h2>
+      </div>
+
+      <!-- Images -->
+      <div class="client-inner_content">
+        <div
+          class="client-inner_content--details"
+          *ngFor="let client of clients"
+        >
+          <div class="client-inner_content--details__image">
+            <img [src]="client.image.src" [alt]="client.image.alt" />
+          </div>
+          <div class="client-inner_content--details__textbox">
+            <h4 class="client-inner_content--name">{{ client.name }}</h4>
+            <h5 class="client-inner_content--position">
+              {{ client.position }}
+              <span class="client-inner_content--position__underline"></span>
+            </h5>
+
+            <p class="client-inner_content--description">
+              {{ client.desc }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,37 @@
+<section class="team">
+  <div class="container">
+    <div class="team-content">
+      <div class="team-content_title">
+        <h4>Who we are</h4>
+        <h2>Meet Our Team <span></span></h2>
+      </div>
+
+      <!-- text -->
+      <p class="team-content_text">
+        Meet our exceptional team of dedicated professionals who are passionate
+        about delivering top-notch results. With diverse expertise and a
+        commitment to excellence, we work collaboratively to exceed expectations
+        and bring your vision to life.
+      </p>
+      <!--Team Images -->
+      <div class="team-content_images">
+        <div
+          class="team-content_images--item"
+          *ngFor="let teamMember of teamMembers"
+        >
+          <div class="team-content_images--item__box">
+            <img [src]="teamMember.imageUrl" alt="" />
+            <div class="icons">
+              <span nz-icon nzType="facebook" nzTheme="fill"></span>
+              <span nz-icon nzType="twitter-square" nzTheme="fill"></span>
+              <span nz-icon nzType="instagram" nzTheme="fill"></span>
+              <span nz-icon nzType="linkedin" nzTheme="fill"></span>
+            </div>
+          </div>
+          <h4 class="team-content_images--name">{{ teamMember.name }}</h4>
+          <p class="team-content_images--position">{{ teamMember.position }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

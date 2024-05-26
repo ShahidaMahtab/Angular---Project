@@ -1,0 +1,104 @@
+<section id="contactSection" class="contact">
+  <div class="container">
+    <div class="contact-content">
+      <div class="contact-content_title">
+        <h4>Contact us</h4>
+        <h2>Get in Touch <span></span></h2>
+      </div>
+
+      <div class="contact-content_textField">
+        <!-- form -->
+        <form [formGroup]="contactForm" (ngSubmit)="getContact('success')">
+          <div>
+            <input
+              type="text"
+              placeholder="Name"
+              name="name"
+              formControlName="name"
+            />
+            <span
+              *ngIf="
+                contactForm.get('name')?.touched &&
+                contactForm.get('name')?.hasError('required')
+              "
+            >
+              This field is required.
+            </span>
+            <span
+              *ngIf="
+                contactForm.get('name')?.touched &&
+                contactForm.get('name')?.hasError('minlength')
+              "
+            >
+              Minimum 5 characters required
+            </span>
+            <span
+              *ngIf="
+                contactForm.get('name')?.touched &&
+                contactForm.get('name')?.hasError('maxlength')
+              "
+            >
+              Maximum 10 characters required
+            </span>
+          </div>
+          <div>
+            <input
+              type="email"
+              placeholder="Email"
+              name="email"
+              formControlName="email"
+            />
+            <span
+              *ngIf="
+                contactForm.get('email')?.touched &&
+                contactForm.get('email')?.hasError('required')
+              "
+            >
+              This field is required.
+            </span>
+            <span
+              *ngIf="
+                contactForm.get('email')?.touched &&
+                contactForm.get('email')?.hasError('email')
+              "
+            >
+              Enter valid email address
+            </span>
+          </div>
+          <div>
+            <textarea
+              placeholder="Message"
+              name="message"
+              formControlName="message"
+            ></textarea>
+            <span
+              *ngIf="
+                contactForm.get('message')?.touched &&
+                contactForm.get('message')?.hasError('required')
+              "
+            >
+              This field is required.
+            </span>
+            <span
+              *ngIf="
+                contactForm.get('message')?.touched &&
+                contactForm.get('message')?.hasError('minlength')
+              "
+            >
+              Minimum 10 characters required
+            </span>
+            <span
+              *ngIf="
+                contactForm.get('message')?.touched &&
+                contactForm.get('message')?.hasError('maxlength')
+              "
+            >
+              Maximum 30 characters required
+            </span>
+          </div>
+          <button type="submit" [disabled]="!contactForm.valid">Send</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

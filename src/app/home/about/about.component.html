@@ -1,0 +1,30 @@
+<section id="aboutSection" class="about">
+  <div class="container">
+    <div class="about-content">
+      <div class="about-content_title">
+        <h4 class="">What we do</h4>
+        <h2 class="">Story about us <span class=""></span></h2>
+      </div>
+      <!-- text -->
+      <p class="about-content_text">
+        Welcome to Mogo, where innovation meets excellence. At Mogo, we pride
+        ourselves on being pioneers in financial technology, committed to
+        delivering top-notch solutions tailored to meet your needs. With a blend
+        of expertise, creativity, and dedication
+      </p>
+      <!-- Images -->
+      <div class="about-content_images">
+        <div
+          class="about-content_images--item"
+          *ngFor="let image of aboutImages"
+        >
+          <img [src]="image.imageUrl" alt="" />
+          <div class="about-content_images--icon">
+            <span nz-icon nzType="team" nzTheme="outline"></span>
+            <h4>Super Team</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

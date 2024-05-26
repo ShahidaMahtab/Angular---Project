@@ -1,0 +1,19 @@
+@import "_mixin";
+.brand {
+  background: #f8f8f8;
+  &-content {
+    &_image {
+      display: flex;
+      justify-content: center;
+      padding-top: 60px;
+      padding-bottom: 60px;
+      @include breakpoint-max(767px) {
+        padding-top: 30px;
+        padding-bottom: 30px;
+      }
+      img {
+        margin: 0 auto;
+      }
+    }
+  }
+}

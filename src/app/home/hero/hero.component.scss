@@ -1,0 +1,191 @@
+@import "_mixin";
+.hero {
+  background: linear-gradient(rgba(255, 0, 0, 0.5), rgba(249, 180, 45, 0.5)),
+    url("../../../assets/images/banner/1.jpg") no-repeat center/cover;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  text-align: center;
+
+  &-inner {
+    position: relative;
+    z-index: 0;
+
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    &_subheading {
+      //border: 1px solid white;
+      margin: 0;
+      z-index: 200;
+      padding: 0;
+      font-family: "Kaushan Script", cursive;
+
+      font-weight: 500;
+      color: white;
+
+      font-size: 6rem;
+
+      @include breakpoint-max(1199px) {
+        font-size: 5rem;
+      }
+      @include breakpoint-max(991px) {
+        font-size: 3.5rem;
+      }
+      @include breakpoint-max(767px) {
+        font-size: 3rem;
+      }
+    }
+    &_slider {
+      margin: 0;
+      max-width: 1050px;
+      text-align: center;
+
+      @include breakpoint-max(1199px) {
+        max-width: 600px;
+      }
+
+      @include breakpoint-max(991px) {
+        max-width: 450px;
+      }
+      @include breakpoint-max(767px) {
+        max-width: 400px;
+      }
+      @include breakpoint-max(575px) {
+        max-width: 300px;
+      }
+
+      &--item {
+        font-size: 3rem;
+        h1 {
+          color: white;
+          font-size: 12rem;
+          font-weight: 700;
+          text-transform: uppercase;
+          padding-bottom: 10rem;
+
+          @include breakpoint-max(1199px) {
+            font-size: 10rem;
+          }
+
+          @include breakpoint-max(991px) {
+            font-size: 8rem;
+          }
+          @include breakpoint-max(767px) {
+            font-size: 7rem;
+          }
+          @include breakpoint-max(575px) {
+            font-size: 6rem;
+          }
+          @include breakpoint-max(320px) {
+            font-size: 5rem;
+            padding-bottom: 5rem;
+          }
+
+          span {
+            display: block;
+            padding: 0;
+          }
+        }
+      }
+    }
+    &_button {
+      position: absolute;
+
+      color: white;
+      font-size: 2rem;
+      font-weight: 400;
+      border: 4px solid white;
+      padding: 10px 30px;
+      text-transform: uppercase;
+      bottom: 16%;
+      margin-bottom: 30px;
+      cursor: pointer;
+      z-index: 10;
+      transition: all 0.4s;
+      @include breakpoint-max(1199px) {
+        font-size: 1.5rem;
+        bottom: 15%;
+      }
+      @include breakpoint-max(991px) {
+        font-size: 1.5rem;
+        border: 2.5px solid white;
+      }
+      @include breakpoint-max(767px) {
+        font-size: 1rem;
+      }
+      @include breakpoint-max(575px) {
+        font-size: 1rem;
+      }
+      @include breakpoint-max(320px) {
+        font-size: 1rem;
+        bottom: 8%;
+        padding: 5px 18px;
+      }
+      &:hover {
+        background: #fff;
+        color: #bf4547;
+      }
+    }
+
+    &_list {
+      display: flex;
+      justify-content: space-between;
+
+      align-items: center;
+
+      max-width: 1050px;
+      @include breakpoint-max(1199px) {
+        max-width: 600px;
+      }
+
+      @include breakpoint-max(991px) {
+        max-width: 550px;
+      }
+      @include breakpoint-max(767px) {
+        max-width: 300px;
+      }
+
+      h4 {
+        font-size: 3rem;
+        color: white;
+        width: 255px;
+        text-align: left;
+
+        font-weight: 700;
+        //margin-right: 50px;
+        @include breakpoint-max(1199px) {
+          font-size: 2rem;
+          max-width: 255px;
+        }
+        @include breakpoint-max(991px) {
+          font-size: 1.8rem;
+        }
+        @include breakpoint-max(767px) {
+          font-size: 1rem;
+        }
+
+        span {
+          font-size: 2rem;
+          font-weight: lighter;
+          text-transform: uppercase;
+          @include breakpoint-max(1199px) {
+            font-size: 2rem;
+          }
+          @include breakpoint-max(991px) {
+            font-size: 1.8rem;
+          }
+
+          @include breakpoint-max(767px) {
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+  }
+}

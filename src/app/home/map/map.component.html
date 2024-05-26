@@ -1,0 +1,31 @@
+<div class="map">
+  <div class="container">
+    <div class="map-inner">
+      <span nz-icon nzType="environment" nzTheme="outline"></span>
+      <button class="map-inner_button" (click)="showModal()">Open Map</button>
+      <nz-modal
+        [(nzVisible)]="isVisible"
+        nzCentered
+        nzTitle="Map"
+        (nzOnCancel)="handleCancel()"
+        (nzOnOk)="handleOk()"
+        [nzWrapClassName]="isVisible ? 'full-screen-modal' : ''"
+      >
+        <ng-container *nzModalContent>
+          <div class="map-inner_container">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7239.298728170255!2d91.8513939935791!3d24.875822500000016!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3751ab1113187949%3A0xa1c7024d595a38c5!2sSylhet%20SY%20.%20SHSY005!5e0!3m2!1sen!2sbd!4v1710396603464!5m2!1sen!2sbd"
+              width="100%"
+              height="450"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </ng-container>
+      </nz-modal>
+      <div class="map-inner_underline"></div>
+    </div>
+  </div>
+</div>

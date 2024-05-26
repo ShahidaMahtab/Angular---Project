@@ -1,1 +1,319 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "./assets/css/_mixin";
 /* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto&display=swap");
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+}
+// ----------------------------Hero Section Swiper----------------------
+.hero {
+  .swiper-pagination {
+    opacity: 1;
+    width: 100vw;
+    margin-top: 5rem;
+  }
+
+  .swiper-pagination::part(bullet) {
+    background-color: #fff;
+    opacity: 1;
+    width: 250px;
+    height: 4px;
+    border-radius: 2px;
+  }
+  .swiper-pagination::part(bullet-active) {
+    background-color: red;
+    height: 4px;
+    border-radius: 2px;
+    width: 250px;
+    border-radius: 0;
+  }
+
+  @media only screen and (max-width: 1199px) {
+    .swiper-pagination::part(bullet) {
+      background-color: #fff;
+      opacity: 1;
+      width: 100px;
+      height: 4px;
+      border-radius: 2px;
+    }
+    .swiper-pagination::part(bullet-active) {
+      background-color: red;
+      height: 4px;
+      border-radius: 2px;
+      width: 100px;
+      border-radius: 0;
+    }
+  }
+  @media only screen and (max-width: 991px) {
+    .swiper-pagination::part(bullet) {
+      background-color: #fff;
+      opacity: 1;
+      width: 80px;
+      height: 4px;
+      border-radius: 2px;
+    }
+    .swiper-pagination::part(bullet-active) {
+      background-color: red;
+      height: 4px;
+      border-radius: 2px;
+      width: 80px;
+      border-radius: 0;
+    }
+  }
+  @media only screen and (max-width: 767px) {
+    .swiper-pagination::part(bullet) {
+      background-color: #fff;
+      opacity: 1;
+      width: 50px;
+      height: 4px;
+      border-radius: 2px;
+    }
+    .swiper-pagination::part(bullet-active) {
+      background-color: red;
+      height: 4px;
+      border-radius: 2px;
+      width: 50px;
+      border-radius: 0;
+    }
+  }
+}
+
+//drawer from ng zorro
+// ----------------------------Header Section Drawer----------------------
+.ant-drawer-content-wrapper {
+  .ant-drawer-header {
+    background: #bf4547;
+    padding-bottom: 30px;
+  }
+  .ant-drawer-wrapper-body {
+    .ant-drawer-body {
+      padding: 0px;
+      @media only screen and (max-width: 320px) {
+      }
+
+      li {
+        padding: 0;
+        border-bottom: 0.5px solid #dddddd;
+        padding: 15px 20px;
+        text-transform: uppercase;
+        a {
+          color: white;
+
+          &:hover {
+            color: yellow;
+          }
+        }
+      }
+    }
+  }
+}
+
+.ant-drawer-header-title {
+  .ant-drawer-close {
+    color: white;
+  }
+}
+// ----------------------------WeDo Section Accordion----------------------
+.wedo-content_inner--accordion {
+  .ant-collapse > .ant-collapse-item > .ant-collapse-header {
+    align-items: center;
+  }
+  .ant-collapse
+    > .ant-collapse-item
+    > .ant-collapse-header
+    .ant-collapse-arrow {
+    display: inline-block;
+    margin-right: 12px;
+    font-size: 34px !important ;
+    vertical-align: 2px !important;
+    color: #69e4cf;
+    font-weight: 700;
+    svg {
+      transform: rotate(0deg) !important;
+    }
+  }
+  .ant-collapse-content {
+    text-align: left;
+    font-style: italic;
+    color: #4e4c4c99;
+  }
+
+  .custom-scrollbar {
+    height: 290px;
+    overflow: hidden;
+    overflow-y: scroll;
+
+    margin: 16px 0;
+    @media only screen and (max-width: 1199px) {
+      height: 122px;
+    }
+    @media only screen and (max-width: 991px) {
+      height: 200px;
+    }
+  }
+  address,
+  dl,
+  ol,
+  p,
+  pre,
+  ul {
+    margin-bottom: 1em;
+    padding-right: 20px;
+  }
+  .ant-collapse-content > .ant-collapse-content-box {
+    padding: 0px 16px 0px 16px;
+  }
+  .ant-collapse > .ant-collapse-item > .ant-collapse-header {
+    border: 1px solid #d9d9d9;
+    font-weight: 700;
+    font-size: 17px;
+    color: #282828;
+  }
+  .ant-collapse > .ant-collapse-item {
+    margin-bottom: 10px;
+    border-bottom: 0px solid #d9d9d9;
+  }
+
+  .ant-collapse-borderless
+    > .ant-collapse-item
+    > .ant-collapse-content
+    > .ant-collapse-content-box {
+    border-left: 1px solid #d9d9d9;
+    border-right: 1px solid #d9d9d9;
+
+    border-bottom: 1px solid #d9d9d9;
+  }
+
+  //scrollbar
+  ::-webkit-scrollbar {
+    width: 5px;
+    height: 3px;
+    background-color: #6ae7d2;
+    border-radius: 8px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 8px;
+    margin: 20px;
+  }
+
+  ::-webkit-scrollbar-button {
+    display: none;
+  }
+}
+
+// ----------------------------review Swiper----------------------
+.review {
+  .swiper-button-lock::part(button-prev) {
+    display: block;
+  }
+  .swiper-button-lock::part(button-next) {
+    display: block;
+  }
+
+  .swiper-button-next.swiper-button-disabled::part(button-next) {
+    opacity: 1;
+  }
+  .swiper-button-prev.swiper-button-disabled::part(button-prev) {
+    opacity: 1;
+  }
+  .swiper-button-next::part(button-next) {
+    height: 10%;
+    color: #222;
+    @media only screen and (max-width: 1199px) {
+      height: 8%;
+    }
+    @media only screen and (max-width: 991px) {
+      height: 5%;
+    }
+    @media only screen and (max-width: 767px) {
+      height: 3%;
+    }
+  }
+  .swiper-button-prev::part(button-prev) {
+    height: 10%;
+    color: #222;
+    @media only screen and (max-width: 1199px) {
+      height: 8%;
+    }
+    @media only screen and (max-width: 991px) {
+      height: 5%;
+    }
+    @media only screen and (max-width: 767px) {
+      height: 3%;
+    }
+  }
+}
+//-------------footer image preview------------------
+
+.ant-image-preview-body {
+  .ant-image-preview-img-wrapper {
+    position: absolute;
+
+    //right: 10%;
+    bottom: 50%;
+
+    left: 30%;
+    @media only screen and (max-width: 1199px) {
+      left: 20%;
+    }
+    @media only screen and (max-width: 991px) {
+      left: 20%;
+    }
+    @media only screen and (max-width: 767px) {
+      left: 10%;
+    }
+    @media only screen and (max-width: 575px) {
+      left: 0%;
+    }
+    @media only screen and (max-width: 320px) {
+      left: 0%;
+    }
+  }
+}
+//----------------modal map----------------
+.full-screen-modal {
+  //  height: 100vh;
+  @media screen and (max-width: 767px) {
+    iframe {
+      height: calc(100vh - 168px);
+    }
+  }
+}
+//----------------spinner blog detail----------------
+nz-spin {
+  .ant-spin-dot {
+    font-size: 5rem;
+    width: 2em;
+    height: 2em;
+  }
+  .ant-spin-dot-item {
+    background-color: #bf4547;
+    width: 50px;
+    height: 50px;
+  }
+}
+nz-breadcrumb {
+  .ant-breadcrumb-link {
+    color: #fff;
+    font-size: 20px;
+    a {
+      color: #d9d9d9;
+    }
+  }
+  .ant-breadcrumb-separator {
+    color: #d9d9d9;
+  }
+}

@@ -1,0 +1,47 @@
+<section id="blogsSection" class="blogs">
+  <div class="container">
+    <div class="blogs-inner">
+      <div class="blogs-inner_title">
+        <h4>Our Stories</h4>
+        <h2>Latest Blog <span></span></h2>
+      </div>
+
+      <!-- Images -->
+
+      <div class="blogs-inner_content">
+        <div class="blogs-inner_content--single" *ngFor="let blog of blogs">
+          <a [routerLink]="['/blogs', blog.id]">
+            <div class="blogs-inner_content--single__details">
+              <div class="blogs-inner_content--box">
+                <img [src]="blog.image" [alt]="blog.id" />
+              </div>
+              <div class="blogs-inner_content--date">
+                <h3>
+                  {{ blog.date }}
+                </h3>
+                <p>{{ blog.month.slice(0, 3) }}</p>
+              </div>
+            </div>
+            <div class="blogs-inner_content--single__text">
+              <h4 class="blogs-inner_content--title">{{ blog.title }}</h4>
+              <p class="blogs-inner_content--desc">
+                {{ blog.desc1.slice(0, 42) }}
+              </p>
+              <hr />
+              <div class="blogs-inner_content--bottom">
+                <div class="blogs-inner_content--bottom__views">
+                  <span nz-icon nzType="eye" nzTheme="fill"></span>
+                  <p>{{ blog.views }}</p>
+                </div>
+                <div class="blogs-inner_content--bottom__comments">
+                  <span nz-icon nzType="comment" nzTheme="outline"></span>
+                  <p>{{ blog.comments }}</p>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

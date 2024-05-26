@@ -1,0 +1,111 @@
+<section class="details">
+  <app-spinner></app-spinner>
+  <div class="details-top">
+    <div class="container">
+      <div class="details-top_link">
+        <span
+          class="details-top_link--icon"
+          nz-icon
+          nzType="left"
+          nzTheme="outline"
+        ></span>
+        <a class="details-top_link--icon__text" (click)="goback()">
+          Back To Previous Page</a
+        >
+      </div>
+      <div class="details-top_breadcrumb">
+        <nz-breadcrumb>
+          <nz-breadcrumb-item>
+            <a [routerLink]="['/']">Home</a>
+          </nz-breadcrumb-item>
+          <nz-breadcrumb-item>Blog</nz-breadcrumb-item>
+        </nz-breadcrumb>
+      </div>
+    </div>
+  </div>
+  <div class="details-inner">
+    <div class="container">
+      <div
+        *ngIf="blogDetail"
+        class="details-inner_content grid lg:gap-20 md:gap-20 gap-0 grid-cols-12"
+      >
+        <div
+          class="details-inner_content--left xl:col-span-8 lg:col-span-7 md:col-span-6 col-span-12"
+        >
+          <div class="details-inner_content--left__topImg">
+            <img [src]="blogDetail?.image1" alt="images" />
+          </div>
+          <h1>{{ blogDetail?.desc1 }}</h1>
+          <p>{{ blogDetail?.date }} {{ blogDetail?.month }} , 2024</p>
+          <div class="details-inner_content--left__box">
+            <div class="details-inner_content--avatar">
+              <img [src]="blogDetail?.avatar" alt="image" />
+            </div>
+            <p>{{ blogDetail?.name }}</p>
+          </div>
+          <p class="details-inner_content--left__desc">
+            {{ blogDetail?.desc2 }}
+          </p>
+          <div class="details-inner_content--left__midImg">
+            <img [src]="blogDetail?.image2" alt="blogDetail.id" />
+          </div>
+          <p class="details-inner_content--left__desc">
+            {{ blogDetail?.desc3 }}
+          </p>
+          <div class="details-inner_content--left__bottomImg">
+            <img [src]="blogDetail?.image3" alt="blogDetail.id" />
+          </div>
+          <p class="details-inner_content--left__desc">
+            {{ blogDetail?.desc4 }}
+          </p>
+          <ul>
+            <li><h3>Keywords</h3></li>
+            <li *ngFor="let keyword of blogDetail?.keywords">
+              <span>{{ keyword ?? "No Keyword" }}</span>
+            </li>
+          </ul>
+        </div>
+        <div
+          class="details-inner_content--right xl:col-span-4 lg:col-span-5 md:col-span-6 col-span-12"
+        >
+          <div class="details-inner_content--right__searchbox">
+            <form class="search-form" (keyup)="onSubmit()">
+              <input
+                type="text"
+                id="searchBox"
+                placeholder="Search...."
+                name="searchField"
+                [(ngModel)]="searchField"
+              />
+              <button type="submit">
+                <span nz-icon nzType="search" nzTheme="outline"></span>
+              </button>
+            </form>
+          </div>
+          <div class="details-inner_content--right__articles">
+            <h2>Latest <span> Article </span></h2>
+            <div *ngIf="searchedArticles">
+              <div
+                class="details-inner_content--article"
+                *ngFor="let article of searchedArticles"
+              >
+                <h4>{{ article?.title }}</h4>
+
+                <p>{{ article?.date }} {{ article?.month }} , 2024</p>
+                <div class="details-inner_content--right__box">
+                  <div class="details-inner_content--avatar">
+                    <img [src]="article?.img" alt="image" />
+                  </div>
+                  <p>{{ article?.name }}</p>
+                </div>
+              </div>
+            </div>
+            <div *ngIf="!searchedArticles?.length">
+              <p>No articles matched your search.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,28 @@
+<section id="workSection" class="work">
+  <div class="work-content">
+    <div class="container">
+      <div class="work-content_title">
+        <h4>What we do</h4>
+        <h2>Some of Our Work <span></span></h2>
+      </div>
+
+      <!-- text -->
+      <p class="work-content_text">
+        Explore a curated selection of our exemplary projects that showcase our
+        creativity, innovation, and attention to detail. From captivating
+        designs to innovative solutions, our work reflects our commitment to
+        quality and client satisfaction.
+      </p>
+    </div>
+    <!-- Images -->
+    <div class="work-content_images">
+      <div class="work-content_images--item" *ngFor="let image of images">
+        <img [src]="image.src" [alt]="image.alt" />
+        <div class="icon">
+          <span nz-icon nzType="picture" nzTheme="outline"></span>
+          <p>Glimpses Through Time</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

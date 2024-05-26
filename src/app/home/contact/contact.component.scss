@@ -1,0 +1,122 @@
+@import "_mixin";
+.contact {
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.8),
+      rgba(255, 255, 255, 0.8)
+    ),
+    url("../../../assets/images/design/bg.jpg") no-repeat center/cover;
+
+  &-content {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    @include breakpoint-max(767px) {
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+
+    &_title {
+      margin-bottom: 100px;
+      @include breakpoint-max(767px) {
+        margin-bottom: 50px;
+      }
+      h4 {
+        font-size: 24px;
+        font-family: "Kaushan Script", cursive;
+        color: #282828;
+      }
+      h2 {
+        position: relative;
+        text-transform: uppercase;
+        font-size: 30px;
+        font-weight: 700;
+        color: #282828;
+        padding-bottom: 29px;
+        margin-bottom: 0px;
+        &::after {
+          content: "";
+          display: block;
+          width: 60px;
+          height: 3px;
+          left: 50%;
+          bottom: 0%;
+          transform: translateX(-50%);
+          background: red;
+          position: absolute;
+        }
+      }
+    }
+
+    &_textField {
+      form {
+        display: flex;
+        flex-direction: column;
+        div {
+          width: 400px;
+          @include breakpoint-max(767px) {
+            width: 300px;
+          }
+          @include breakpoint-max(320px) {
+            width: 300px;
+          }
+          margin-bottom: 10px;
+          input {
+            display: block;
+            width: 100%;
+
+            border: 1px solid #d3d3d3;
+            border-radius: 5px;
+            padding: 20px;
+
+            &:focus {
+              outline: none;
+            }
+          }
+          span {
+            color: red;
+            display: block;
+            text-align: left;
+          }
+          input.ng-touched.ng-invalid {
+            border: 1px solid red;
+          }
+          textarea {
+            border: 1px solid #d3d3d3;
+
+            display: block;
+            padding: 20px;
+            width: 100%;
+
+            border-radius: 5px;
+            &:focus {
+              outline: none;
+            }
+          }
+          textarea.ng-touched.ng-invalid {
+            border: 1px solid red;
+          }
+        }
+        button {
+          width: 100%;
+          display: block;
+          border-radius: 5px;
+          color: #fff;
+          padding: 10px;
+          background: #bf4547;
+
+          text-transform: uppercase;
+          font-size: 15px;
+          font-weight: 700;
+          &:disabled {
+            cursor: not-allowed;
+            opacity: 0.7;
+          }
+        }
+      }
+    }
+  }
+}

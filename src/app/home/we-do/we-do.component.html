@@ -1,0 +1,52 @@
+<section class="wedo">
+  <div class="container">
+    <div class="wedo-content">
+      <div class="wedo-content_title">
+        <h4 class="">Service</h4>
+        <h2 class="">What we do <span class=""></span></h2>
+      </div>
+      <!-- text -->
+      <p class="wedo-content_text">
+        Our company specializes in providing innovative solutions for businesses
+        worldwide. From web design and development to digital marketing
+        strategies, we offer a comprehensive suite of services tailored to meet
+        your specific needs. Our team of experts is dedicated.
+      </p>
+
+      <!-- Images -->
+      <div class="wedo-content_inner">
+        <div class="wedo-content_inner--image">
+          <img src="assets/images/wedo.jpg" alt="" />
+        </div>
+        <!-- Accordion -->
+        <div class="wedo-content_inner--accordion">
+          <nz-collapse [nzBordered]="false" nzAccordion>
+            <nz-collapse-panel
+              #p
+              *ngFor="let panel of accordionData"
+              [nzActive]="panel.active"
+              [nzHeader]="panel.name"
+              [nzExpandedIcon]="panel.icon"
+              [ngStyle]="panel.customStyle"
+              [nzExtra]="extraTpl"
+            >
+              <div class="custom-scrollbar">
+                <p class="">
+                  {{ panel.content }}
+                </p>
+                <ng-template #extraTpl let-active>
+                  <span
+                    nz-icon
+                    nzType="down"
+                    [nzRotate]="p.nzActive ? 180 : 0"
+                    (click)="$event.stopPropagation()"
+                  ></span>
+                </ng-template>
+              </div>
+            </nz-collapse-panel>
+          </nz-collapse>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,68 @@
+<header class="header" appTransparentHeader [heroHeight]="heroHeight">
+  <div class="container">
+    <div class="header-inner">
+      <div class="header-inner_content">
+        <h4 class="header-inner_content--logo">
+          <a routerLink="/"> MoGo </a>
+        </h4>
+        <div class="header-inner_content--drawer">
+          <div
+            nz-button
+            nz-icon
+            nzType="menu"
+            nzTheme="outline"
+            (click)="open()"
+          ></div>
+
+          <nz-drawer
+            [nzClosable]="true"
+            [nzVisible]="visible"
+            nzPlacement="right"
+            nzTitle=""
+            nzWidth="320px"
+            [nzBodyStyle]="drawerBodyStyle"
+            (nzOnClose)="close()"
+          >
+            <ng-container *nzDrawerContent>
+              <li>
+                <a [routerLink]="['/about']"> About </a>
+              </li>
+              <li>
+                <a [routerLink]="['/services']"> Service </a>
+              </li>
+              <li>
+                <a [routerLink]="['/work']"> Work </a>
+              </li>
+              <li>
+                <a [routerLink]="['/blogs']"> Blog </a>
+              </li>
+              <li>
+                <a [routerLink]="['/contacts']"> Contact </a>
+              </li>
+            </ng-container>
+          </nz-drawer>
+        </div>
+      </div>
+      <!-- nav links -->
+      <nav>
+        <ul class="">
+          <li class="">
+            <a (click)="navigateToSection('/#aboutSection')"> About </a>
+          </li>
+          <li>
+            <a (click)="navigateToSection('/#servicesSection')"> Service </a>
+          </li>
+          <li>
+            <a (click)="navigateToSection('/#workSection')"> Work </a>
+          </li>
+          <li>
+            <a (click)="navigateToSection('/#blogsSection')"> Blog </a>
+          </li>
+          <li>
+            <a (click)="navigateToSection('/#contactSection')"> Contact </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>

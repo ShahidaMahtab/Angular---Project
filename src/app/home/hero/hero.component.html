@@ -1,0 +1,33 @@
+<section class="hero">
+  <div class="container">
+    <div class="hero-inner">
+      <h4 class="hero-inner_subheading">Creative Template</h4>
+
+      <swiper-container
+        class="mySwiper hero-inner_slider swiper-container swiper-pagination"
+        pagination="true"
+        pagination-clickable="true"
+        space-between="10"
+        slides-per-view="1"
+      >
+        <swiper-slide
+          *ngFor="let slide of slides"
+          class="hero-inner_slider--item"
+        >
+          <h1>
+            {{ slide.title }}
+            <span> {{ slide.subtitle }}</span>
+          </h1>
+        </swiper-slide>
+      </swiper-container>
+      <button class="hero-inner_button">Learn More</button>
+
+      <div class="hero-inner_list">
+        <h4>01 <span> Intro </span></h4>
+        <h4>02 <span> Works </span></h4>
+        <h4>03 <span> About </span></h4>
+        <h4>04 <span> Contacts </span></h4>
+      </div>
+    </div>
+  </div>
+</section>

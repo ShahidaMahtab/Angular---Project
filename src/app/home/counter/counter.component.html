@@ -1,0 +1,12 @@
+<div class="counter">
+  <div class="container">
+    <div class="counter-content">
+      <div class="counter-content_single" *ngFor="let counter of counters">
+        <h3 [countUp]="counter.count" [options]="{ enableScrollSpy: true }">
+          0
+        </h3>
+        <p>{{ counter.label }}</p>
+      </div>
+    </div>
+  </div>
+</div>

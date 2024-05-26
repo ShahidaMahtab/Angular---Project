@@ -1,0 +1,61 @@
+.counter {
+  background: #95e1d4;
+
+  &-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @media only screen and (max-width: 1199px) {
+      flex-wrap: wrap;
+    }
+    &_single {
+      height: 250px;
+      width: 400px;
+      border: 0.5px solid #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding-top: 60px;
+      padding-bottom: 60px;
+
+      @media only screen and (max-width: 1199px) {
+        width: 300px;
+      }
+      @media only screen and (max-width: 991px) {
+        width: 200px;
+      }
+      @media only screen and (max-width: 767px) {
+        padding: 30px 0;
+        height: 125px;
+      }
+      h3 {
+        color: #fff;
+        font-size: 72px;
+        font-weight: 700;
+        margin-bottom: 25px;
+
+        @media only screen and (max-width: 1199px) {
+          font-size: 6rem;
+          margin-bottom: 10px;
+        }
+        @media only screen and (max-width: 991px) {
+          font-size: 4rem;
+        }
+        @media only screen and (max-width: 767px) {
+          font-size: 3rem;
+        }
+        @media only screen and (max-width: 575px) {
+          font-size: 2rem;
+        }
+      }
+      p {
+        color: white;
+        text-transform: uppercase;
+        font-size: 16px;
+        white-space: nowrap;
+        margin-bottom: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+<div class="brand">
+  <div class="container">
+    <swiper-container class="brandSwiper brand-content">
+      <swiper-slide *ngFor="let imagePath of imagePaths" class="brand-slide">
+        <div class="brand-content_image">
+          <img [src]="imagePath" alt="" />
+        </div>
+      </swiper-slide>
+    </swiper-container>
+  </div>
+</div>
